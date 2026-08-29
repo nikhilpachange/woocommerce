@@ -1,18 +1,20 @@
 /**
- * External dependencies
+ * Vendor imports
  */
 import { createRoot } from '@wordpress/element';
 
 /**
- * Internal dependencies
+ * Local imports
  */
 import { App } from './app';
 import '../index.scss';
 
-const appRoot = document.getElementById(
-	'woocommerce-admin-test-helper-app-root'
+// Target container for mounting the React app
+const rootEl = document.getElementById(
+	'wc-admin-test-helper-root'
 );
 
-if ( appRoot ) {
-	createRoot( appRoot ).render( <App /> );
+if ( rootEl ) {
+	const root = createRoot( rootEl );
+	root.render( <App /> );
 }
